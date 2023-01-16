@@ -21,4 +21,4 @@ if (number >= 2)
     }
 }
 else
-    Console.WriteLine("Натуральных четных чисел нет");
+    Console.WriteLine("Натуральных четных чисел в нужном диапазоне нет");
