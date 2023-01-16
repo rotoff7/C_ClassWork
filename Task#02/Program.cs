@@ -24,7 +24,7 @@ else if (number1 < number2)
     Console.WriteLine(number1);
 }
 else
-    Console.WriteLine("Введенные числа равны");
+    Console.WriteLine("Введенные числа равны ("+number1+").");
 
 
 // Через дополнительные переменные:
