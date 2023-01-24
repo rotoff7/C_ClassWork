@@ -5,8 +5,10 @@
 
 void MassiveFiller(int[] col)
 {
+    Random rnd = new Random();
     for (int i = 0; i < col.Length; i++)
-        col[i] = new Random().Next(0, 2);
+
+        col[i] = rnd.Next(0, 2);
 }
 
 // void MassiveRighter(int[] col) // Вывод через переменную var.
@@ -21,11 +23,39 @@ void MassiveConclusion(int[] col) // Вывод через цикл + консо
     Console.Write("Получившийся  массив: ");
     for (int i = 0; i < col.Length; i++)
     {
-        Console.Write($"  {col[i]}");
+        Console.Write($"|{col[i]}");
     }
 }
 
-int[] array = new int[8];
+Console.WriteLine("Введите размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[size];
 MassiveFiller(array);
 MassiveConclusion(array);
 // MassiveRighter(array);
+
+
+// V2.
+// int[] arr = CreateArray(8);
+// PrintArray(arr);
+
+
+// int[] CreateArray(int size)
+// {
+//     int[] array = new int[size];
+//     Random rnd = new Random();
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = rnd.Next(0, 2);
+//     }
+//     return array;
+// }
+
+
+// void PrintArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write($"{array[i]} ");
+//     }
+// }
