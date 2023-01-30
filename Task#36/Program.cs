@@ -19,20 +19,20 @@ void PrintArray(int[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i<array.Length - 1)
-        Console.Write($"{array[i]}, ");
+        if (i < array.Length - 1)
+            Console.Write($"{array[i]}, ");
         else Console.Write($"{array[i]}]");
     }
 }
 
 int OddIndexSum(int[] array)
 {
-int sum = 0;
-for (int i = 1; i < array.Length; i+=2)
-{
-    sum += array[i];
-}
-return sum;
+    int sum = 0;
+    for (int i = 1; i < array.Length; i += 2)
+    {
+        sum += array[i];
+    }
+    return sum;
 }
 
 // Поскольку из условий нету ограничений на размер и диапазон чисел, то все это задает пользователь.
@@ -51,8 +51,8 @@ PrintArray(array);
 
 if (size > 1)
 {
-int sum = OddIndexSum(array);
-Console.WriteLine($" -> Сумма элементов, стоящих на нечётных позициях = {sum}");
+    int sum = OddIndexSum(array);
+    Console.WriteLine($" -> Сумма элементов, стоящих на нечётных позициях = {sum}");
 }
 else Console.WriteLine("\r\nВ массиве отсутствуют элементы стоящие на нечетных позициях.");
 
