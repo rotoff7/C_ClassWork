@@ -35,20 +35,23 @@ void ArrayPrint2(int[] col) // Вывод ответа 1 в 1 как в прим
 // Второй способ вывода массива. Сделал так, чтоб выглядел 1 в 1.
 // Однако сам код меня смущает. Пришлось помудрить чтоб не смотря на цикл "концы" массива выводились правильно.
 {
-    for (int i = 0; i < col.Length - 1; i++) // Цикл работает для всех элементов кроме крайнего, он выводится отдельно.
+    for (int i = 0; i < col.Length; i++)
     {
-        Console.Write($"{col[i]}, ");
+        if (i < col.Length - 1)
+            Console.Write($"{col[i]}, ");
+        else
+            Console.Write(col[i]);
     }
-    Console.Write($"{col[col.Length - 1]} -> [");
-    for (int i = 0; i < col.Length - 1; i++) // Тоже самое
-    {
-        Console.Write($"{col[i]}, ");
-    }
-    Console.Write($"{col[col.Length - 1]}]");
 }
 
 Console.Write("Введите размер массива: ");
 int size;
 if (int.TryParse(Console.ReadLine(), out size) && size > 0)
-    ArrayPrint2(MassiveCreate(size));
+{
+    int[] array = MassiveCreate(size);
+    ArrayPrint2(array);
+    Console.Write(" -> [");
+    ArrayPrint2(array);
+    Console.Write("]");
+}
 else Console.WriteLine("Введено некорректное значение. Введите размер массива.");
