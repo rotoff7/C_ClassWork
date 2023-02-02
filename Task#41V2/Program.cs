@@ -41,7 +41,7 @@ int PositiveNumCount(double[] numarr)
     return count;
 }
 
-Console.WriteLine("Введите ряд M чисел в формате: 1, 2, 4, 7, ....n");
+Console.WriteLine("Введите ряд чисел в формате: 1, 2, 4, 7, ....n");
 string newstr = Console.ReadLine();
 string[] strarr = CreateStringArray(newstr);
 
