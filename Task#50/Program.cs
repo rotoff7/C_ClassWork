@@ -57,8 +57,11 @@ void PrintMatrix(int[,] array)
 }
 
 bool MatrixElementCheck(int[,] array, int rowsPos, int columnsPos)
+// Сделал такое сложное условие, поскольку хотел видеть вывод ответа в консоль в случае,
+// если пользователь введет отрицательные значения позиции элемента (-1, -5 -> такого элемента нет.)
 {
-    return rowsPos < array.GetLength(0) && columnsPos < array.GetLength(1);
+    return rowsPos < array.GetLength(0) && rowsPos >= 0
+         && columnsPos < array.GetLength(1) && columnsPos >= 0;
 }
 
 // Сперва сделал вывод искомого элемент через метод, но в данной задаче проще будет вывести его напрямую
@@ -90,5 +93,5 @@ int columnsElemPos = UserInput();
 
 bool elemExist = MatrixElementCheck(matrix, rowsElemPos - 1, columnsElemPos - 1);
 // -1 Добавил, чтоб было более привычно задавать номера строки и столбцов (с 1, а не с 0)
-Console.WriteLine(elemExist ? $"\r\nИскомый элемент - {matrix[rowsElemPos - 1, columnsElemPos - 1]}"
+Console.WriteLine(elemExist ? $"\r\nИскомый элемент: {matrix[rowsElemPos - 1, columnsElemPos - 1]}"
                             : $"\r\n{rowsElemPos}, {columnsElemPos} -> такого элемента в массиве нет");
