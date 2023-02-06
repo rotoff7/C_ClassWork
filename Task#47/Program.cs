@@ -5,8 +5,9 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-// Подумать над проверками ввода данных.
-int UserInputInt()
+// Не придумал адекватный способ сделать универсальный метод ввода, для разных типов данных,
+// с разными условиями. Поэтому просто сделал 2 разных метода ввода.
+int UserInputNatural()
 {
     int temp;
     if (int.TryParse(Console.ReadLine(), out temp) && temp > 0) ;
@@ -60,13 +61,13 @@ void PrintMatrix(double[,] array)
 }
 
 Console.Write("Введите кол-во строк: ");
-int rowsSize = UserInputInt();
+int rowsSize = UserInputNatural();
 Console.Write("Введите кол-во столбцов: ");
-int columnsSize = UserInputInt();
+int columnsSize = UserInputNatural();
 Console.Write("Введите левую границу диапазона чисел: ");
-double min = UserInputDouble();
+double minValue = UserInputDouble();
 Console.Write("Введите правую границу диапазона чисел: ");
-double max = UserInputDouble();
+double maxValue = UserInputDouble();
 
-double[,] matrix = MatrixDoubleCreate(rowsSize, columnsSize, min, max);
+double[,] matrix = MatrixDoubleCreate(rowsSize, columnsSize, minValue, maxValue);
 PrintMatrix(matrix);
