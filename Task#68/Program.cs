@@ -15,16 +15,16 @@ int UserInput()
     return value;
 }
 
-int AckermannFunction(int n, int m)
+int AckermannFunction(int m, int n)
 {
-    if (n == 0) return m + 1;
-    else if (m == 0) return AckermannFunction(n - 1, 1);
-    else return AckermannFunction((n -1), AckermannFunction(n, m - 1));
+    if (m == 0) return n + 1;
+    else if (n == 0) return AckermannFunction(m - 1, 1);
+    else return AckermannFunction((m -1), AckermannFunction(m, n - 1));
 }
 
-Console.Write("Введите параметр n: ");
-int nParametr = UserInput();
 Console.Write("Введите параметр m: ");
 int mParametr = UserInput();
-int result = AckermannFunction(nParametr, mParametr);
+Console.Write("Введите параметр n: ");
+int nParametr = UserInput();
+int result = AckermannFunction(mParametr, nParametr);
 Console.WriteLine($"m = {mParametr}, n = {nParametr} -> A(m,n) = {result}");
