@@ -24,7 +24,9 @@ int AckermannFunction(int m, int n)
 
 Console.Write("Введите параметр m: ");
 int mParametr = UserInput();
+if (mParametr < 0) IncorrectValue();
 Console.Write("Введите параметр n: ");
 int nParametr = UserInput();
+if (nParametr < 0) IncorrectValue();
 int result = AckermannFunction(mParametr, nParametr);
 Console.WriteLine($"m = {mParametr}, n = {nParametr} -> A(m,n) = {result}");
