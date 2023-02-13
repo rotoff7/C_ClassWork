@@ -22,10 +22,10 @@ int AckermannFunction(int m, int n)
     else return AckermannFunction((m -1), AckermannFunction(m, n - 1));
 }
 
-Console.Write("Введите параметр m: ");
+Console.Write("Введите неотрицательный параметр m: ");
 int mParametr = UserInput();
 if (mParametr < 0) IncorrectValue();
-Console.Write("Введите параметр n: ");
+Console.Write("Введите неотрицательный параметр n: ");
 int nParametr = UserInput();
 if (nParametr < 0) IncorrectValue();
 int result = AckermannFunction(mParametr, nParametr);
