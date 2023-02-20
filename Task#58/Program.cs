@@ -79,17 +79,16 @@ int[,] MatrixMultiplication(int[,] firstMatrix, int[,] secondMatrix)
         for (int j = 0; j < secondMatrix.GetLength(1); j++)
         {
             int sum = 0;
-            for (int n = 0; n < secondMatrix.GetLength(1); n++)
+            for (int n = 0; n < firstMatrix.GetLength(1); n++)
             {
                 int result = firstMatrix[i, n] * secondMatrix[n, j];
                 sum += result;
             }
-            multiplicationRes[i,j] = sum;
+            multiplicationRes[i, j] = sum;
         }
     }
     return multiplicationRes;
 }
-
 
 Console.WriteLine("Задайте первую матрицу.");
 int[,] matrix1 = MatrixCreate(MatrixParameters());
@@ -105,8 +104,8 @@ PrintMatrix(matrix2);
 Console.WriteLine();
 if (MultiplicationMatrixCheck(matrix1, matrix2) == true)
 {
-int[,] resultMatrix = (MatrixMultiplication(matrix1, matrix2));
-Console.WriteLine("Итоговая матрица:");
-PrintMatrix(resultMatrix);
+    int[,] resultMatrix = (MatrixMultiplication(matrix1, matrix2));
+    Console.WriteLine("Итоговая матрица:");
+    PrintMatrix(resultMatrix);
 }
-else Console.WriteLine("Матрицы с такими параметрами умножить нельзя.");
+else Console.WriteLine("Матрицы с такими параметрами перемножить нельзя.");
