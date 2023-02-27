@@ -28,7 +28,9 @@ int MtoNAllNumbersSum(int num1, int num2)
 
 Console.Write("Введите первое число: ");
 int firstNumber = UserInput();
+if (firstNumber <= 0) IncorrectValue();
 Console.Write("Введите второе число: ");
 int secondNumber = UserInput();
+if (secondNumber <= 0) IncorrectValue();
 int result = MtoNAllNumbersSum(firstNumber, secondNumber);
 Console.WriteLine($"M = {firstNumber}; N = {secondNumber} -> {result}");
